@@ -1,0 +1,12 @@
+{% extends "base.html" %} {% block title %} Portfolio AI {% endblock %} {% block
+main %}
+<h1>Submit your portfolio:</h1>
+<form method="POST" role="form" action="/" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+  <div>
+    {{ form.file.label }}<br />
+    {{ form.file(size=32) }}
+  </div>
+  <div>{{ form.submit(class="btn btn-primary") }}</div>
+</form>
+{% endblock %}

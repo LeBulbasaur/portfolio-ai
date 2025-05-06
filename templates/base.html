@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+    <style>
+      body {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #282828;
+        color: #ebdbb2;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .btn {
+        background-color: #458588;
+        color: #ebdbb2;
+        border: none;
+        padding: 0.5rem 0.5rem;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .content {
+        padding: 0.5rem 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    {% block main %} {% endblock %}
+  </body>
+</html>

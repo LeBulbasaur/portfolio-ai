@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block title %}OCR Content{% endblock %} {% block
+main%}
+
+<h1>Processed PDF Content</h1>
+<div class="content">
+  {% if pages %} {% for page in pages %}
+  <div class="page">
+    <h3>Page {{ loop.index }}</h3>
+    <p>{{ page }}</p>
+  </div>
+  {% endfor %} {% else %}
+  <p>No content to display. Please upload a PDF file.</p>
+  {% endif %}
+</div>
+{% endblock %}
