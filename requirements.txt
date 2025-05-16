@@ -4,3 +4,11 @@ EMAIL-VALIDATOR==2.1.1
 pytesseract==0.3.10
 PDF2IMAGE==1.17.0 
 ollama
+pandas
+torch
+lightning
+transformers
+scikit-learn
+matplotlib
+numpy
+seaborn
