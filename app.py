@@ -1,6 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, flash
 from forms import FileForm
 from ocr import extract_text_from_pdf
+from job_matching import CVJobMatchingSystem
 
 app = Flask(__name__)
 app.secret_key = '@( * O * )@'
@@ -22,6 +23,9 @@ def main():
 @app.route('/outcome', methods=['GET', 'POST'])
 def outcome():
     global processed_pages
+    matcher = CVJobMatchingSystem()
+    result = matcher.compare_cv_with_job(processed_pages[0])
+    print(result)
     return render_template('outcome.html', pages=processed_pages)
 
 
