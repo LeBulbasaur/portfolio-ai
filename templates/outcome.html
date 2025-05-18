@@ -3,10 +3,12 @@ main%}
 
 <h1>Processed PDF Content</h1>
 <div class="content">
-  <div>
+  <div id="progress-container">
     {% if result %}
-    <label for="file">Compatibility:</label>
-    <progress id="file" value="{{ result }}" max="100">{{ result }}%</progress>
+    <label for="compatibility">Compatibility:</label>
+    <progress id="compatibility" value="{{ result }}" max="100">
+      {{ result }}%
+    </progress>
     <span>{{ result }}%</span>
     {% endif %}
   </div>

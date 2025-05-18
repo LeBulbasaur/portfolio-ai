@@ -41,6 +41,35 @@
       .content {
         padding: 0.5rem 2rem;
       }
+
+      #progress-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      progress {
+        height: 2rem;
+        border-radius: 8px;
+        background-color: #3c3836;
+      }
+
+      progress::-webkit-progress-bar {
+        background-color: #3c3836;
+        border-radius: 8px;
+      }
+
+      progress::-webkit-progress-value {
+        background-color: #458588;
+        border-radius: 8px;
+      }
+
+      progress::-moz-progress-bar {
+        background-color: #458588;
+        border-radius: 8px;
+      }
     </style>
   </head>
   <body>
