@@ -1,5 +1,5 @@
 # pip install lightning transformers -q
-
+import os
 import pandas as pd
 import torch
 from torch import nn
@@ -201,4 +201,5 @@ model = CVJobMatchingModel()
 trainer = L.Trainer(max_epochs=9, accelerator='auto', devices='auto')
 trainer.fit(model, train_loader, val_loader)
 
+torch.save(model.state_dict(), os.path.join(os.path.dirname(os.getcwd()), "model", "cv_job_matching_model.pt"))
 trainer.test(model, test_loader)
