@@ -7,6 +7,10 @@ main %}
     {{ form.file.label }}<br />
     {{ form.file(size=32) }}
   </div>
+  <div>
+    {{ form.job_text.label }}<br />
+    {{ form.job_text(class="form-text-area", size=32) }}
+  </div>
   <div>{{ form.submit(class="btn btn-primary") }}</div>
 </form>
 {% endblock %}

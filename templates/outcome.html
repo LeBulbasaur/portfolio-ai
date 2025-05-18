@@ -3,6 +3,13 @@ main%}
 
 <h1>Processed PDF Content</h1>
 <div class="content">
+  <div>
+    {% if result %}
+    <label for="file">Compatibility:</label>
+    <progress id="file" value="{{ result }}" max="100">{{ result }}%</progress>
+    <span>{{ result }}%</span>
+    {% endif %}
+  </div>
   {% if pages %} {% for page in pages %}
   <div class="page">
     <h3>Page {{ loop.index }}</h3>

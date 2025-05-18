@@ -7,13 +7,16 @@ app = Flask(__name__)
 app.secret_key = '@( * O * )@'
 
 processed_pages = []
+job_offer = "We are looking for a JavaScript and Python developer with experience in machine learning and data analysis."
 
 @app.route('/', methods=['GET', 'POST'])
 def main():
     global processed_pages
+    global job_offer
     form = FileForm()
     if form.validate_on_submit():
         uploaded_file = form.file.data
+        job_offer = form.job_text.data
         print(f"Uploaded File Name: {uploaded_file.filename}")
         processed_pages = extract_text_from_pdf(uploaded_file)
         print(f"OCR finished successfully")
@@ -24,9 +27,8 @@ def main():
 def outcome():
     global processed_pages
     matcher = CVJobMatchingSystem()
-    result = matcher.compare_cv_with_job(processed_pages[0])
-    print(result)
-    return render_template('outcome.html', pages=processed_pages)
+    result = round(matcher.compare_cv_with_job(" ".join(processed_pages), job_offer) * 100, 2)
+    return render_template('outcome.html', pages=processed_pages, result=result)
 
 
 if __name__ == '__main__':

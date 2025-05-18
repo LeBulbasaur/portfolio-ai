@@ -28,8 +28,7 @@ class CVJobMatchingSystem:
         self.model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
         self.model.eval()
 
-    def compare_cv_with_job(self, cv_text):
-        job_offer = "We are looking for a JavaScript and Python developer with experience in machine learning and data analysis."
+    def compare_cv_with_job(self, cv_text, job_offer):
         encoded = self.tokenizer(
             cv_text,
             job_offer,
