@@ -1,16 +1,7 @@
-import os
-import pandas as pd
 import torch
 from torch import nn
-from torch.utils.data import Dataset, DataLoader
 import lightning as L
 from transformers import AutoTokenizer, AutoModel
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
-import matplotlib.pyplot as plt
-import numpy as np
-import seaborn as sns
-from sklearn.metrics import confusion_matrix
 
 class CVJobMatchingModel(L.LightningModule):
     def __init__(self):
@@ -38,7 +29,7 @@ class CVJobMatchingSystem:
         self.model.eval()
 
     def compare_cv_with_job(self, cv_text):
-        job_offer = "We are looking for a sex worker who codes in python"
+        job_offer = "We are looking for a JavaScript and Python developer with experience in machine learning and data analysis."
         encoded = self.tokenizer(
             cv_text,
             job_offer,
