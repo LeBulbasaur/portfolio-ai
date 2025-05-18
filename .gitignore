@@ -10,6 +10,9 @@ __pycache__/
 # Logs
 lightning_logs
 
+# Model file
+model
+
 # Virtual environment
 venv/
 env/
