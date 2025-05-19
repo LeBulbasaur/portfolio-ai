@@ -8,5 +8,5 @@ class FileForm(FlaskForm):
         FileRequired(),
         FileAllowed(['pdf'], 'Only PDF files are allowed!')
     ])
-    job_text = TextAreaField('Paste your job offer', validators=[DataRequired(), Length(min=4, max=150)])
+    job_text = TextAreaField('Paste your job offer', validators=[DataRequired(), Length(min=4, max=1000)])
     submit = SubmitField('Submit')
