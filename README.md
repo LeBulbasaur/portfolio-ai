@@ -30,7 +30,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-4. Install Tesseract OCR on your machine:
+4. Install Tesseract OCR and poppler on your machine:
 
 ```bash
 sudo apt-get update
