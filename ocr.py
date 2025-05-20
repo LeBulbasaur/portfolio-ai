@@ -14,8 +14,11 @@ def extract_text_from_image(image_file):
     
 def extract_text_from_pdf(pdf_file):
     try:
+        if not os.path.exists('temp'):
+            os.makedirs('temp')
         filename = datetime.datetime.now()
         temp_pdf_path = f"temp/{filename}.pdf"
+        
         pdf_file.save(temp_pdf_path)
 
         pages = convert_from_path(temp_pdf_path, 350)
