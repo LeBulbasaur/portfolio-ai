@@ -14,6 +14,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         tesseract-ocr \
+        poppler-utils \
     && rm -rf /var/lib/apt/lists/*
 
 # Create non-root user
