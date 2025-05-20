@@ -35,6 +35,7 @@ pip install -r requirements.txt
 ```bash
 sudo apt-get update
 sudo apt-get install tesseract-ocr
+sudo apt-get install poppler-utils
 ```
 
 5. Run the Flask application:
